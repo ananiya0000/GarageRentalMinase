@@ -1,0 +1,35 @@
+﻿@model List<QuickFix_V1.Models.Garage>
+
+
+@{ ViewBag.Title = "Index"; }
+<form class="form-inline" action="/Driver/index">
+    <label for="search" class="mr-1">Search:</label>
+    <input type="search" class="form-control mr-1" id="search" name="search" value="@ViewBag.search" placeholder="Search">
+    <button type="submit" class="btn btn-primary">GO</button>
+</form>
+            <div class="container row p-0 m-0">
+                <h2 class="text-info">List of Garages</h2>
+                <table class="table table-striped border">
+                    <tr>
+                        <th>GarageName</th>
+                        <th>Location</th>
+                        <th>Number of Employees</th>
+                       
+
+                    </tr>
+                    @foreach (var Garage in Model)
+                    {
+                <tr>
+       
+                    <td>@Garage.GarageName</td>
+                    <td>@Garage.Location</td>
+                    <td>@Garage.NumberOfEmployees</td>
+                    
+
+                    <td>
+                        <a href="/Driver/PlaceOrder" class="btn btn-info">Request</a>
+                    </td>
+                </tr>}
+                </table>
+
+            </div>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<QuickFix_V1.Models.servicerequired>
+
+@{
+    ViewBag.Title = "SRList";
+}
+
+<h2>SRList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Servicerequired)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.carmodel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.carbrand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Userid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GarageId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Servicerequired)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.carmodel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.carbrand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Userid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GarageId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.serviceid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.serviceid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.serviceid })
+        </td>
+    </tr>
+}
+
+</table>

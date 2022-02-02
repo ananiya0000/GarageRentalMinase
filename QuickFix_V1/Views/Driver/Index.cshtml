@@ -1,0 +1,57 @@
+﻿@model QuickFix_V1.Models.Driver
+
+@{
+    ViewBag.Title = "Index";
+}
+<h1>@ViewBag.userid</h1>
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+   
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse m-100" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link" href="/Driver/listGarages">Request service</a>
+            </li>
+
+            <li class="nav-item mx-3">
+                <a class="nav-link" href="/Driver/DiPaymentLog">Payment Log</a>
+            </li>
+
+            <li class="nav-item dropdown mx-3">
+                <div class="dropdown">
+                    <a class="btn btn-primary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Profile
+                    </a>
+
+                    
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="/Driver/Edit/@ViewBag.userid">Edit Profile</a>
+                        <a class="dropdown-item" href="/Driver/Delete/@ViewBag.userid">Delete Profile</a>
+                        <a class="dropdown-item" href="/Driver/view/@ViewBag.userid">View Profile</a>
+                    </div>
+                </div>
+            </li>
+
+
+        </ul>
+        <form class="d-flex mx-auto p-3">
+            <input class="form-control" type="search" placeholder="Search Garage" aria-label="Search">
+            <button class="btn btn-outline-success flex-row" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+
